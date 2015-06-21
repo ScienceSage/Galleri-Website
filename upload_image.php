@@ -42,6 +42,7 @@
         while($row = $result->fetch_assoc()) {
             echo "Name: " . $row["Name"]. "<br>";
         }
+        echo "found some shit";
     } else {
         echo "0 results";
     }
