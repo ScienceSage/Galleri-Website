@@ -21,8 +21,8 @@
     ?>
     
     <?php
-    $servername = "tcp:m0oyvtw1iy.database.windows.net";
-    $username = "usr_sage";
+    $servername = "m0oyvtw1iy.database.windows.net";
+    $username = "usr_sage@m0oyvtw1iy";
     $password = "90MB26#!";
     $dbname = "GalleriDB";
 
