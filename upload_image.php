@@ -22,10 +22,10 @@
     
     <?php
     $server = "tcp:m0oyvtw1iy.database.windows.net";
-    $user = "usr_sage"@m0oyvtw1iy;
+    $user = "usr_sage@m0oyvtw1iy";
     $pwd = "90MB26#!";
     $db = "GalleriDB";
-
+    echo "Hello";
     $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
 
     if($conn === false){
