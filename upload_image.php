@@ -21,27 +21,16 @@
     ?>
     
     <?php
-    $servername = "m0oyvtw1iy.database.windows.net";
-    $username = "usr_sage@m0oyvtw1iy";
-    $password = "90MB26#!";
-    $dbname = "GalleriDB";
+    $server = "tcp:m0oyvtw1iy.database.windows.net";
+    $user = "usr_sage"@m0oyvtw1iy;
+    $pwd = "90MB26#!";
+    $db = "GalleriDB";
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
+
+    if($conn === false){
+        die(print_r(sqlsrv_errors()));
     }
-
-    $sql = "INSERT INTO TestImages (Name) VALUES ('John')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
-    $conn->close();
     ?> 
     
     
