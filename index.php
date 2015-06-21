@@ -17,6 +17,10 @@
     <h1>Welcome to GALLERi</h1>
     <h2>An app for art</h2>
     
-    <iframe frameborder="0" src="scripts/navigation.php"></iframe>
+    <!--<iframe frameborder="0" src="scripts/navigation.php"></iframe>-->
+    <?php 
+    include("/scripts/navigation.php");
+    ?>
+    
 </body>
 </html>
