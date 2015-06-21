@@ -22,7 +22,7 @@
     
     <?php
     $server = "tcp:m0oyvtw1iy.database.windows.net";
-    $user = "usr_sage"@m0oyvtw1iy;
+    $user = "usr_sage@m0oyvtw1iy";
     $pwd = "90MB26#!";
     $db = "GalleriDB";
 
