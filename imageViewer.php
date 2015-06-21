@@ -16,7 +16,9 @@
     <h1>Welcome to GALLERi Image Viewer</h1>
     <h2>View some art</h2>
     
-    <iframe frameborder="0" src="scripts/navigation.php"></iframe>
+    <?php 
+    include("/scripts/navigation.php");
+    ?>
     
 </body>
 </html> 
