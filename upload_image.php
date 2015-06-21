@@ -25,7 +25,7 @@
     $user = "usr_sage@m0oyvtw1iy";
     $pwd = "90MB26#!";
     $db = "GalleriDB";
-    echo "Hello";
+    echo "Hello ";
     $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
 
     if($conn === false){
@@ -34,16 +34,17 @@
         echo "connected!";
     }
 
-    $sql = "INSERT INTO TestImage (Name)
-    VALUES ('John')";
+    $sql = "SELECT Name FROM TestImages";
+    $result = $conn->query($sql);
 
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo "Name: " . $row["Name"]. "<br>";
+        }
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "0 results";
     }
-
-    $conn->close();
     ?> 
     
     
