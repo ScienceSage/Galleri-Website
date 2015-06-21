@@ -31,6 +31,17 @@
     if($conn === false){
         die(print_r(sqlsrv_errors()));
     }
+
+    $sql = "INSERT INTO TestImage (Name)
+    VALUES ('John')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
     ?> 
     
     
