@@ -30,6 +30,8 @@
 
     if($conn === false){
         die(print_r(sqlsrv_errors()));
+    } else {
+        echo "connected!";
     }
 
     $sql = "INSERT INTO TestImage (Name)
