@@ -20,18 +20,28 @@
     // DB connection info
 	$host = "tcp:m0oyvtw1iy.database.windows.net"; 
 	$user = "usr_sage@m0oyvtw1iy";
-	$pwd = "90MB26";
+	$pwd = "90MB26#!";
 	$db = "GalleriDB";
 	try{
 		$conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
 		$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 	}
 	catch(Exception $e){
-        echo "Failure";
 		die(print_r($e));
 	}
 	
+    $sql = "SELECT Name FROM TestImages";
+    $result = $conn->query($sql);
 
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo "Name: " . $row["Name"]. "<br>";
+        }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();
     ?> 
     
     
