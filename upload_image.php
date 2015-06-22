@@ -41,6 +41,7 @@
     } else {
         echo "0 results";
     }
+    echo $result;
     $conn->close();
     ?> 
     
