@@ -30,18 +30,15 @@
 		die(print_r($e));
 	}
 	
-    $sql = "SELECT * FROM TestImages";
-    $result = $conn->query($sql);
+    $sql = "INSERT INTO TestImages (Name)
+    VALUES ('John')";
 
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            echo "Name: " . $row["Name"]. "<br>";
-        }
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
     } else {
-        echo "0 results";
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
-    echo $result;
+
     $conn->close();
     ?> 
     
