@@ -29,16 +29,18 @@
 	catch(Exception $e){
 		die(print_r($e));
 	}
-	
-    $sql = "INSERT INTO TestImages (Name)
-    VALUES ('John')";
 
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+    $sql = "SELECT Name FROM MyGuests";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo "Name: " . $row["Name"]. "<br>";
+        }
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "0 results";
     }
-
     $conn->close();
     ?> 
     
