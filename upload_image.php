@@ -17,23 +17,20 @@
     <h2>View some art</h2>
     
     <?php 
-    include("/scripts/navigation.php");
-    ?>
-    
-    <?php
-    $server = "tcp:m0oyvtw1iy.database.windows.net";
-    $user = "usr_sage@m0oyvtw1iy";
-    $pwd = "90MB26#!";
-    $db = "GalleriDB";
-    
-    $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
-    
-    if($conn === false){
-        die(print_r(sqlsrv_errors()));
-    } else {
-        echo "connected! ";
-        echo $conn;
-    }
+    // DB connection info
+	$host = "tcp:m0oyvtw1iy.database.windows.net"; 
+	$user = "usr_sage@m0oyvtw1iy";
+	$pwd = "90MB26#!";
+	$db = "GalleriDB";
+	try{
+		$conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
+		$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+	}
+	catch(Exception $e){
+        echo "Failure";
+		die(print_r($e));
+	}
+	
 
     ?> 
     
