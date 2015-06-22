@@ -18,9 +18,9 @@
     
     <?php 
     // DB connection info
-	$host = "m0oyvtw1iy.database.windows.net"; 
+	$host = "tcp:m0oyvtw1iy.database.windows.net"; 
 	$user = "usr_sage@m0oyvtw1iy";
-	$pwd = "90MB26#!";
+	$pwd = "90MB26";
 	$db = "GalleriDB";
 	try{
 		$conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
