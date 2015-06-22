@@ -34,7 +34,7 @@
         echo "connected! ";
     }
 
-    $sql = "SELECT * FROM items";
+    $sql = "SELECT * FROM TestImages";
 	$stmt = $conn->query($sql);
 	echo $stmt;
     echo "done ";
