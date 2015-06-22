@@ -30,7 +30,7 @@
 		die(print_r($e));
 	}
 	
-    $sql = "SELECT Name FROM TestImages";
+    $sql = "SELECT * FROM TestImages";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
