@@ -13,7 +13,7 @@
 
 <body class="g-font">
 
-    <h1>Welcome to GALLERi Image Viewer</h1>
+    <h1>Welcome to GALLERi Uploader</h1>
     <h2>View some art</h2>
     
     <?php 
@@ -25,28 +25,19 @@
     $user = "usr_sage@m0oyvtw1iy";
     $pwd = "90MB26#!";
     $db = "GalleriDB";
-    echo "Hello ";
+    
     $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
 
     if($conn === false){
         die(print_r(sqlsrv_errors()));
     } else {
-        echo "connected!";
+        echo "connected! ";
     }
 
-    $sql = "SELECT Name FROM TestImages";
-    $result = $conn->query($sql);
-    echo "hey";
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            echo "Name: " . $row["Name"]. "<br>";
-        }
-        echo "found some shit";
-    } else {
-        echo "0 results";
-    }
-    $conn->close();
+    $sql = "SELECT * FROM items";
+	$stmt = $conn->query($sql);
+	echo $stmt;
+    echo "done ";
     ?> 
     
     
