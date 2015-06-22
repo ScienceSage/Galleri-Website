@@ -18,7 +18,7 @@
     
     <?php 
     // DB connection info
-	$host = "tcp:m0oyvtw1iy.database.windows.net"; 
+	$host = "m0oyvtw1iy.database.windows.net"; 
 	$user = "usr_sage@m0oyvtw1iy";
 	$pwd = "90MB26#!";
 	$db = "GalleriDB";
