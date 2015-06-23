@@ -30,7 +30,7 @@
 		die(print_r($e));
 	}
 
-    $sql = "SELECT Name FROM MyGuests";
+    $sql = "SELECT Name FROM TestImages";
     echo "here 1 ";
     $result = $conn->query($sql);
     echo "here ";
