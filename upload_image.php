@@ -31,15 +31,15 @@
 	}
 
     $sql = "SELECT Name FROM MyGuests";
+    echo "here 1 ";
     $result = $conn->query($sql);
-
+    echo "here ";
     if ($result->num_rows > 0) {
         echo "sup";
         // output data of each row
         while($row = $result->fetch_assoc()) {
             echo "Name: " . $row[0]. "<br>";
         }
-        
     } else {
         echo "0 results";
     }
