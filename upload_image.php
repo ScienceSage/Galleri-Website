@@ -30,7 +30,7 @@
 		die(print_r($e));
 	}
 
-    $sql = "SELECT Name FROM TestImages";
+    $sql = "SELECT * FROM TestImages";
     echo "here 1 ";
     $result = $conn->query($sql);
     echo "here ";
@@ -38,7 +38,7 @@
         echo "sup";
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            echo "Name: " . $row[0]. "<br>";
+            echo "Name: " . $row["Name"]. "<br>";
         }
     } else {
         echo "0 results";
