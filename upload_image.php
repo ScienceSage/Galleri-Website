@@ -42,6 +42,17 @@
         echo "0 results";
     }
     $conn->close();
+
+//    $sql = "INSERT INTO TestImages (Name)
+//    VALUES ('John')";
+//
+//    if ($conn->query($sql) === TRUE) {
+//        echo "New record created successfully";
+//    } else {
+//        echo "Error: " . $sql . "<br>" . $conn->error;
+//    }
+//
+//    $conn->close();
     ?> 
     
     
