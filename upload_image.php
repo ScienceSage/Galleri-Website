@@ -44,6 +44,9 @@
 
     if(($result = sqlsrv_query($conn,"SELECT * FROM TestImages")) !== false){
         echo "found something";
+        while( $obj = sqlsrv_fetch_object( $result )) {
+              echo $obj->colName.'<br />';
+        }
     }
 
 //    $sql = "SELECT * FROM TestImages";
