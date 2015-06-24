@@ -44,7 +44,7 @@
 
     if(($result = sqlsrv_query($conn,"SELECT * FROM TestImages")) !== false){
         echo "found something";
-        while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
+        while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) ) {
             echo $row['ID'].", ".$row['Name']."<br />";
         }
     }
