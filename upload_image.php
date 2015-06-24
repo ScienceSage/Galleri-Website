@@ -32,22 +32,25 @@
 //        FatalError("Failed to connect...");
 //    }
 
-    $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
+//      THIS ONE WORKS!!!
+//    $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
+//
+//    if( $conn ) {
+//         echo "Connection established.<br />";
+//    }else{
+//         echo "Connection could not be established.<br />";
+//         die( print_r( sqlsrv_errors(), true));
+//    }
 
-    if( $conn ) {
-         echo "Connection established.<br />";
-    }else{
-         echo "Connection could not be established.<br />";
-         die( print_r( sqlsrv_errors(), true));
-    }
+	try{
+		$conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
+		$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+	}
+	catch(Exception $e){
+		die(print_r($e));
+	}
 
-//	try{
-//		$conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
-//		$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-//	}
-//	catch(Exception $e){
-//		die(print_r($e));
-//	}
+    echo "Connected!";
 
 //    $sql = "SELECT * FROM TestImages";
 //    $result = $conn->query($sql);
