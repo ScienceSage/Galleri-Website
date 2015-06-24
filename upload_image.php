@@ -52,6 +52,7 @@
 	$sql = "SELECT * FROM items";
 	$stmt = sqlsrv_query ( $conn , $sql );
 
+    echo "test " . $stmt[1];
     echo "made it";
 //    $sql = "SELECT * FROM TestImages";
 //    echo "here 1 ";
