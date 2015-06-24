@@ -51,7 +51,6 @@
 
     $sql = "SELECT * FROM TestImages";
     $result = $conn->query($sql);
-    echo "here 2";
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
