@@ -64,22 +64,18 @@
 
 //	$sql = "SELECT * FROM items";
 //	$stmt = sqlsrv_query ( $conn , $sql );
-//
-//    echo "test " . $stmt;
-//    echo "made it";
-//    $sql = "SELECT * FROM TestImages";
-//    echo "here 1 ";
-//    $result = $conn->query($sql);
-//    echo "here ";
-//    if ($result->num_rows > 0) {
-//        echo "sup";
-//        // output data of each row
-//        while($row = $result->fetch_assoc()) {
-//            echo "Name: " . $row["Name"]. "<br>";
-//        }
-//    } else {
-//        echo "0 results";
-//    }
+
+    $sql = "SELECT * FROM TestImages";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        echo "sup";
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo "Name: " . $row["Name"]. "<br>";
+        }
+    } else {
+        echo "0 results";
+    }
 //    $conn->close();
 
 //    $sql = "INSERT INTO TestImages (Name)
