@@ -49,10 +49,20 @@
 //		die(print_r($e));
 //	}
 
-	$sql = "SELECT * FROM items";
-	$stmt = sqlsrv_query ( $conn , $sql );
+    $sql = "INSERT INTO TestImages (Name) VALUES ('joe')";
+    $params = array(1, "some data");
 
-    echo "test " . $stmt;
+    $stmt = sqlsrv_query( $conn, $sql, $params);
+    if( $stmt === false ) {
+         die( print_r( sqlsrv_errors(), true));
+    } else {
+        echo = "success";
+    }
+
+//	$sql = "SELECT * FROM items";
+//	$stmt = sqlsrv_query ( $conn , $sql );
+//
+//    echo "test " . $stmt;
 //    echo "made it";
 //    $sql = "SELECT * FROM TestImages";
 //    echo "here 1 ";
