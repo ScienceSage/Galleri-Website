@@ -49,15 +49,10 @@
 //		die(print_r($e));
 //	}
 
-    //$conn = connect();
-    echo "connected";
 	$sql = "SELECT * FROM items";
-	$stmt = $conn->query($sql);
-    echo "queried";
-	$items = $stmt->fetchAll(PDO::FETCH_NUM);
-    echo "made it to here!";
-    echo "item: " . items[1];
+	$stmt = sqlsrv_query ( $conn , $sql );
 
+    echo "made it";
 //    $sql = "SELECT * FROM TestImages";
 //    echo "here 1 ";
 //    $result = $conn->query($sql);
