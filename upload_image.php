@@ -14,14 +14,14 @@
 <body class="g-font">
 
     <h1>Welcome to GALLERi Uploader</h1>
-    <h2>View some art</h2>
+    <h2>Upload some stuff</h2>
     
-    <form>
+    <form action="additem.php" method="post">
     Name:<br>
-    <input type="text" name="Name">
+    <input type="text" name="name">
     <br>
     Title of Image:<br>
-    <input type="text" name="Title">
+    <input type="text" name="title">
     <br><br>
     <input type="submit" value="Submit">
     </form> 
