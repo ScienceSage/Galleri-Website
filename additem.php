@@ -2,6 +2,7 @@
 $name = $_POST['name'];
 $title = $_POST['title'];
 $votes = 0;
+$image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
 
 $server = "tcp:m0oyvtw1iy.database.windows.net,1433"; 
 $user = "usr_sage@m0oyvtw1iy";
@@ -16,7 +17,7 @@ if( $conn ) {
      die( print_r( sqlsrv_errors(), true));
 }
 
-$sql = "INSERT INTO TestImages (Name, ImageTitle) VALUES ('{$name}', '{$title}')";
+$sql = "INSERT INTO TestImages (Name, ImageTitle, Image) VALUES ('{$name}', '{$title}', '{$image}')";
 $params = array(1, "some data");
 
 $stmt = sqlsrv_query( $conn, $sql, $params);
