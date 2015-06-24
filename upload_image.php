@@ -42,6 +42,10 @@
          die( print_r( sqlsrv_errors(), true));
     }
 
+    if(($result = sqlsrv_query($conn,"SELECT * FROM TestImages")) !== false){
+        echo "found something";
+    }
+
 //    $sql = "SELECT * FROM TestImages";
 //    $result = $conn->query($sql);
 //    if ($result->num_rows > 0) {
@@ -65,17 +69,17 @@
 //	$sql = "SELECT * FROM items";
 //	$stmt = sqlsrv_query ( $conn , $sql );
 
-    $sql = "SELECT * FROM dbo.TestImages";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        echo "sup";
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            echo "Name: " . $row["Name"]. "<br>";
-        }
-    } else {
-        echo "0 results";
-    }
+//    $sql = "SELECT * FROM dbo.TestImages";
+//    $result = $conn->query($sql);
+//    if ($result->num_rows > 0) {
+//        echo "sup";
+//        // output data of each row
+//        while($row = $result->fetch_assoc()) {
+//            echo "Name: " . $row["Name"]. "<br>";
+//        }
+//    } else {
+//        echo "0 results";
+//    }
 //    $conn->close();
 
 //    $sql = "INSERT INTO TestImages (Name)
