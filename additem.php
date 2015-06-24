@@ -16,7 +16,7 @@ if( $conn ) {
      die( print_r( sqlsrv_errors(), true));
 }
 
-$sql = "INSERT INTO TestImages (Name, ImageTitle, Votes) VALUES ($name, $title)";
+$sql = "INSERT INTO TestImages (Name, ImageTitle) VALUES ('David', 'test title')";
 $params = array(1, "some data");
 
 $stmt = sqlsrv_query( $conn, $sql, $params);
