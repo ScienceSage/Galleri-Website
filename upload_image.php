@@ -16,12 +16,14 @@
     <h1>Welcome to GALLERi Uploader</h1>
     <h2>Upload some stuff</h2>
     
-    <form action="additem.php" method="post">
+    <form action="additem.php" method="post" enctype="multipart/form-data">
     Name:<br>
     <input type="text" name="name">
     <br>
     Title of Image:<br>
     <input type="text" name="title">
+    <br>
+    <label>File: </label><input type="file" name="image" />
     <br><br>
     <input type="submit" value="Submit">
     </form> 
