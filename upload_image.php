@@ -16,6 +16,16 @@
     <h1>Welcome to GALLERi Uploader</h1>
     <h2>View some art</h2>
     
+    <form>
+    Name:<br>
+    <input type="text" name="Name">
+    <br>
+    Title of Image:<br>
+    <input type="text" name="Title">
+    <br><br>
+    <input type="submit" value="Submit">
+    </form> 
+    
     <?php 
 	$server = "tcp:m0oyvtw1iy.database.windows.net,1433"; 
 	$user = "usr_sage@m0oyvtw1iy";
@@ -30,12 +40,6 @@
          die( print_r( sqlsrv_errors(), true));
     }
 
-    if(($result = sqlsrv_query($conn,"SELECT * FROM TestImages")) !== false){
-        echo "found something";
-        while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) ) {
-            echo "<br>".$row['ID'].", ".$row['Name']."</br>";
-        }
-    }
     ?> 
     
     
