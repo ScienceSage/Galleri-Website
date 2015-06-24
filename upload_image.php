@@ -49,16 +49,16 @@
 //		die(print_r($e));
 //	}
 
-    $sql = "SELECT * FROM TestImages";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            echo "Name: " . $row["Name"]. "<br>";
-        }
-    } else {
-        echo "0 results";
-    }
+//    $sql = "SELECT * FROM TestImages";
+//    $result = $conn->query($sql);
+//    if ($result->num_rows > 0) {
+//        // output data of each row
+//        while($row = $result->fetch_assoc()) {
+//            echo "Name: " . $row["Name"]. "<br>";
+//        }
+//    } else {
+//        echo "0 results";
+//    }
 
 //    THIS ONE WORKS!!!
 //    $sql = "INSERT INTO TestImages (Name) VALUES ('joe')";
