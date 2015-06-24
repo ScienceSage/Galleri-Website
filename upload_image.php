@@ -22,11 +22,22 @@
 	$user = "usr_sage@m0oyvtw1iy";
 	$pwd = "90MB26#!";
 	$db = "GalleriDB";
-    $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
 
-    if($conn === false){
-        die(print_r(sqlsrv_errors()));
+    $connectionInfo = array("Database"=>$db, "UID"=>user, "PWD"=>pwd, "MultipleActiveResultSets"=>true);
+
+    sqlsrv_configure('WarningsReturnAsErrors', 0);
+    $conn = sqlsrv_connect( $server, $connectionInfo);
+    if($conn === false)
+    {
+        FatalError("Failed to connect...");
     }
+
+//    $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
+//
+//    if($conn === false){
+//        die(print_r(sqlsrv_errors()));
+//    }
+
 //	try{
 //		$conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
 //		$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
@@ -35,7 +46,7 @@
 //		die(print_r($e));
 //	}
 
-    $conn = connect();
+    //$conn = connect();
     echo "connected";
 	$sql = "SELECT * FROM items";
 	$stmt = $conn->query($sql);
