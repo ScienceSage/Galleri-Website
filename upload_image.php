@@ -49,13 +49,25 @@
 //		die(print_r($e));
 //	}
 
-    $sql = "INSERT INTO TestImages (Name) VALUES ('joe')";
-    $params = array(1, "some data");
-
-    $stmt = sqlsrv_query( $conn, $sql, $params);
-    if( $stmt === false ) {
-         die( print_r( sqlsrv_errors(), true));
+    $sql = "SELECT * FROM TestImages";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo "Name: " . $row["Name"]. "<br>";
+        }
+    } else {
+        echo "0 results";
     }
+
+//    THIS ONE WORKS!!!
+//    $sql = "INSERT INTO TestImages (Name) VALUES ('joe')";
+//    $params = array(1, "some data");
+//
+//    $stmt = sqlsrv_query( $conn, $sql, $params);
+//    if( $stmt === false ) {
+//         die( print_r( sqlsrv_errors(), true));
+//    }
 
 //	$sql = "SELECT * FROM items";
 //	$stmt = sqlsrv_query ( $conn , $sql );
