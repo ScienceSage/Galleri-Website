@@ -34,8 +34,11 @@
 
     $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
 
-    if($conn === false){
-        die(print_r(sqlsrv_errors()));
+    if( $conn ) {
+         echo "Connection established.<br />";
+    }else{
+         echo "Connection could not be established.<br />";
+         die( print_r( sqlsrv_errors(), true));
     }
 
 //	try{
