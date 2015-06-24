@@ -48,7 +48,7 @@
 //	catch(Exception $e){
 //		die(print_r($e));
 //	}
-    echo = "here 1";
+    echo = "here 1 ";
     $sql = "SELECT * FROM TestImages";
     $result = $conn->query($sql);
     echo "here 2";
