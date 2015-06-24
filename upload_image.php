@@ -30,20 +30,28 @@
 		die(print_r($e));
 	}
 
-    $sql = "SELECT * FROM TestImages";
-    echo "here 1 ";
-    $result = $conn->query($sql);
-    echo "here ";
-    if ($result->num_rows > 0) {
-        echo "sup";
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            echo "Name: " . $row["Name"]. "<br>";
-        }
-    } else {
-        echo "0 results";
-    }
-    $conn->close();
+    $conn = connect();
+	$sql = "SELECT * FROM items";
+	$stmt = $conn->query($sql);
+    echo "queried";
+	$items = $stmt->fetchAll(PDO::FETCH_NUM);
+    echo "made it to here!";
+    echo "item: " . items[1];
+
+//    $sql = "SELECT * FROM TestImages";
+//    echo "here 1 ";
+//    $result = $conn->query($sql);
+//    echo "here ";
+//    if ($result->num_rows > 0) {
+//        echo "sup";
+//        // output data of each row
+//        while($row = $result->fetch_assoc()) {
+//            echo "Name: " . $row["Name"]. "<br>";
+//        }
+//    } else {
+//        echo "0 results";
+//    }
+//    $conn->close();
 
 //    $sql = "INSERT INTO TestImages (Name)
 //    VALUES ('John')";
