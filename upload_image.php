@@ -65,7 +65,7 @@
 //	$sql = "SELECT * FROM items";
 //	$stmt = sqlsrv_query ( $conn , $sql );
 
-    $sql = "SELECT * FROM TestImages";
+    $sql = "SELECT * FROM dbo.TestImages";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         echo "sup";
