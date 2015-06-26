@@ -1,5 +1,5 @@
 <?php
-echo "4 hello ";
+echo "5 hello ";
 require_once 'WindowsAzure\WindowsAzure.php';
 
 use WindowsAzure\Common\ServicesBuilder;
@@ -9,7 +9,7 @@ use WindowsAzure\Common\ServiceException;
 
 $storageConnString="DefaultEndpointsProtocol=https;AccountName=galleri;AccountKey=iMiW1aThQIgJvOEesVg/kxJYw2lit9LU56HKhvPNbzmI5mKv5SvKkI9QRtOVnPXLU3K4qYsMane8hyIoJ/qYvw==";
 
-$connectionString = CloudConfigurationManager::getConnectionString($storageConnString);
+//$connectionString = CloudConfigurationManager::getConnectionString($storageConnString);
 
 // Create blob REST proxy.
 //$blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
