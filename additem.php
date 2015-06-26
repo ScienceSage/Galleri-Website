@@ -7,7 +7,7 @@ $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
 include_once 'sqltasks.php';
 $conn = connect();
 
-$sql = "INSERT INTO TestImages (Name, ImageTitle) VALUES ('{$name}', '{$title}')";
+$sql = "INSERT INTO TestImages (Name, ImageTitle, Image) VALUES ('{$name}', '{$title}', '{$image}')";
 $params = array(1, "some data");
 
 $stmt = sqlsrv_query( $conn, $sql, $params);
