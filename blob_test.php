@@ -1,12 +1,12 @@
 <?php
 echo "hello";
 require_once 'WindowsAzure\WindowsAzure.php';
-//
-//use WindowsAzure\Common\ServicesBuilder;
-//use WindowsAzure\Blob\Models\CreateContainerOptions;
-//use WindowsAzure\Blob\Models\PublicAccessType;
-//use WindowsAzure\Common\ServiceException;
-//
+
+use WindowsAzure\Common\ServicesBuilder;
+use WindowsAzure\Blob\Models\CreateContainerOptions;
+use WindowsAzure\Blob\Models\PublicAccessType;
+use WindowsAzure\Common\ServiceException;
+
 //$connectionString=https;AccountName=galleri;AccountKey=iMiW1aThQIgJvOEesVg/kxJYw2lit9LU56HKhvPNbzmI5mKv5SvKkI9QRtOVnPXLU3K4qYsMane8hyIoJ/qYvw==;
 //
 //// Create blob REST proxy.
@@ -49,6 +49,6 @@ require_once 'WindowsAzure\WindowsAzure.php';
 //    echo $code.": ".$error_message."<br />";
 //}
 
-
+echo "done";
 
 ?>
