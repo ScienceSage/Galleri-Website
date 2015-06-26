@@ -1,5 +1,5 @@
 <?php
-echo "3 hello ";
+echo "4 hello ";
 require_once 'WindowsAzure\WindowsAzure.php';
 
 use WindowsAzure\Common\ServicesBuilder;
@@ -7,10 +7,12 @@ use WindowsAzure\Blob\Models\CreateContainerOptions;
 use WindowsAzure\Blob\Models\PublicAccessType;
 use WindowsAzure\Common\ServiceException;
 
-$connectionString="DefaultEndpointsProtocol=https;AccountName=galleri;AccountKey=iMiW1aThQIgJvOEesVg/kxJYw2lit9LU56HKhvPNbzmI5mKv5SvKkI9QRtOVnPXLU3K4qYsMane8hyIoJ/qYvw==";
+$storageConnString="DefaultEndpointsProtocol=https;AccountName=galleri;AccountKey=iMiW1aThQIgJvOEesVg/kxJYw2lit9LU56HKhvPNbzmI5mKv5SvKkI9QRtOVnPXLU3K4qYsMane8hyIoJ/qYvw==";
+
+$connectionString = CloudConfigurationManager::getConnectionString($storageConnString);
 
 // Create blob REST proxy.
-$blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
+//$blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
 //// OPTIONAL: Set public access policy and metadata.
 //// Create container options object.
