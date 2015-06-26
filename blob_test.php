@@ -9,7 +9,28 @@ use WindowsAzure\Common\ServiceException;
 
 $storageConnString="DefaultEndpointsProtocol=https;AccountName=galleri;AccountKey=iMiW1aThQIgJvOEesVg/kxJYw2lit9LU56HKhvPNbzmI5mKv5SvKkI9QRtOVnPXLU3K4qYsMane8hyIoJ/qYvw==";
 
-//$connectionString = CloudConfigurationManager::getConnectionString($storageConnString);
+try 
+{
+    $connectionString = CloudConfigurationManager::getConnectionString($storageConnString);
+    
+} 
+catch(ServiceException $serviceException)
+{
+    // Handle exception based on error codes and messages.
+    // Error codes and messages are here: 
+    // http://msdn.microsoft.com/en-us/library/windowsazure/dd179439.aspx
+    echo "ServiceException encountered.\n";
+    $code = $serviceException->getCode();
+    $error_message = $serviceException->getMessage();
+    echo "$code: $error_message";
+}
+catch (Exception $exception) 
+{
+    echo "Exception encountered.\n";
+    $code = $exception->getCode();
+    $error_message = $exception->getMessage();
+    echo "$code: $error_message";
+}
 
 // Create blob REST proxy.
 //$blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
