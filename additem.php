@@ -2,7 +2,7 @@
 $name = $_POST['name'];
 $title = $_POST['title'];
 $votes = 0;
-$image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+$image = $_POST['image'];
 
 include_once 'sqltasks.php';
 $conn = connect();

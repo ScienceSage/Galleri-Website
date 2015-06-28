@@ -26,11 +26,7 @@
     <label>File: </label><input type="file" name="image" />
     <br><br>
     <input type="submit" value="Submit">
-    </form> 
-    
-    <?php 
-	
-    ?> 
+    </form>
     
     
 </body>
