@@ -2,7 +2,8 @@
 $name = $_POST['name'];
 $title = $_POST['title'];
 $votes = 0;
-$image = $_POST['image'];
+//$image = $_POST['image'];
+$image = "test data thing";
 
 include_once 'sqltasks.php';
 $conn = connect();

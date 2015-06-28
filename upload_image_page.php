@@ -23,9 +23,9 @@
     Title of Image:<br>
     <input type="text" name="title">
     <br>
-    <label>File: </label><input type="file" name="image" />
+    <label>File: </label><input type="file" name="image" id="image" />
     <br><br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" name="submit">
     </form>
     
     
