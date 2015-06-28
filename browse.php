@@ -22,7 +22,7 @@
     
     if(($result = sqlsrv_query($conn,"SELECT * FROM TestImages")) !== false){
         while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) ) {
-            echo $row['ID'].", ".$row['Name']."<br />";
+            echo $row['Name']."<br />".$row['Image'];
         }
     }
     ?>
